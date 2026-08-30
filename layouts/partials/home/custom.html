@@ -1,0 +1,103 @@
+{{/* Home a medida: hero = último proyecto real, qué hacemos, próximos
+     eventos, proyectos destacados. Activada vía homepage.layout = "custom"
+     (layouts/index.html: partial (print "home/" .Site.Params.homepage.layout ".html") .)
+     El contexto "." es la Page de la home. */}}
+
+{{/* El hero es "lo último que hemos construido", así que solo entran
+     proyectos que ya existen de verdad (no ideas todavía sin empezar). */}}
+{{ $proyectos := where site.RegularPages "Section" "proyectos" }}
+{{ $proyectosConstruidos := where $proyectos "Params.estado" "in" (slice "completado" "en-curso") }}
+{{ $proyectosOrdenados := sort $proyectosConstruidos "Date" "desc" }}
+{{ $ultimoProyecto := "" }}
+{{ if gt (len $proyectosOrdenados) 0 }}
+  {{ $ultimoProyecto = index $proyectosOrdenados 0 }}
+{{ end }}
+
+{{ $eventos := where site.RegularPages "Section" "eventos" }}
+{{ $eventosFuturos := slice }}
+{{ range $eventos }}
+  {{ if .Date.After now }}
+    {{ $eventosFuturos = $eventosFuturos | append . }}
+  {{ end }}
+{{ end }}
+{{ $eventosFuturos = first 3 (sort $eventosFuturos "Date" "asc") }}
+
+{{ $destacados := where $proyectos "Params.destacado" true }}
+{{ if $ultimoProyecto }}
+  {{ $destacados = where $destacados "RelPermalink" "ne" $ultimoProyecto.RelPermalink }}
+{{ end }}
+
+<div class="flex flex-col gap-16 py-8">
+
+  {{/* Hero: lo último que ha hecho la asociación */}}
+  {{ with $ultimoProyecto }}
+    <section class="hero-entrance relative overflow-hidden rounded-2xl border border-neutral-200 bg-primary-50 p-10 dark:border-neutral-800 dark:bg-primary-900">
+      <div class="globe-grid-bg" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="420" height="420" style="position:absolute; right:-80px; top:-80px;">
+          <circle cx="100" cy="100" r="90" />
+          <ellipse cx="100" cy="100" rx="90" ry="35" />
+          <ellipse cx="100" cy="100" rx="90" ry="60" />
+          <line x1="10" y1="100" x2="190" y2="100" />
+          <line x1="100" y1="10" x2="100" y2="190" />
+        </svg>
+      </div>
+      <div class="relative">
+        <p class="telemetry-label mb-3">Lo último que hemos construido</p>
+        <h1 class="mt-0 mb-3 max-w-2xl text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+          <a class="no-underline hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h1>
+        {{ $segments := partial "functions/telemetry-segments.html" . }}
+        {{ partial "telemetry-label.html" $segments }}
+        {{ with .Params.summary }}
+          <p class="mt-4 max-w-2xl text-neutral-700 dark:text-neutral-300">{{ . }}</p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="mt-6 inline-flex items-center gap-2 font-semibold text-primary-700 hover:underline dark:text-primary-400">
+          Ver el proyecto {{ partial "icon.html" "link" }}
+        </a>
+      </div>
+    </section>
+  {{ end }}
+
+  {{/* Qué hacemos */}}
+  <section>
+    <h2 class="text-2xl font-extrabold mb-6">Qué hacemos</h2>
+    <div class="prose dark:prose-invert max-w-none">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  {{/* Próximos eventos */}}
+  {{ if gt (len $eventosFuturos) 0 }}
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-extrabold m-0">Próximos eventos</h2>
+        <a class="text-sm font-semibold text-primary-700 hover:underline dark:text-primary-400" href="{{ "eventos" | relURL }}">Ver todos</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {{ range $eventosFuturos }}
+          {{ partial "article-link/card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+
+    <hr class="section-divider">
+  {{ end }}
+
+  {{/* Proyectos destacados */}}
+  {{ if gt (len $destacados) 0 }}
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-extrabold m-0">Proyectos destacados</h2>
+        <a class="text-sm font-semibold text-primary-700 hover:underline dark:text-primary-400" href="{{ "proyectos" | relURL }}">Ver todos</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {{ range $destacados }}
+          {{ partial "article-link/card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+</div>

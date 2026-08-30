@@ -1,0 +1,9 @@
+{{/* Recibe un slice de strings ya formados y los une con " · ", en mono
+     mayúsculas (text-transform en CSS, no aquí, para no romper lectores de
+     pantalla). Uso: {{ partial "telemetry-label.html" (slice "Proyecto" "LoRaWAN" "ETSI" "12 nodos") }} */}}
+{{ $segments := . }}
+<p class="telemetry-label">
+  {{ range $i, $s := $segments }}
+    {{ if $i }}<span class="telemetry-label__sep" aria-hidden="true"> · </span>{{ end }}{{ $s }}
+  {{ end }}
+</p>

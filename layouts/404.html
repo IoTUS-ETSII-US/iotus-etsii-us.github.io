@@ -1,0 +1,32 @@
+{{/* Sobreescritura de themes/blowfish/layouts/404.html: Cloudia sustituye
+     al "404" gigante y a las citas aleatorias — la mascota solo aparece
+     aquí y en estados vacíos, nunca en cabecera ni en materiales
+     institucionales. */}}
+{{ define "main" }}
+  <section class="relative flex grow flex-col items-center justify-center overflow-hidden py-24 text-center">
+    {{ with resources.Get "img/cloudia.jpg" }}
+      <img
+        src="{{ .RelPermalink }}"
+        alt=""
+        aria-hidden="true"
+        width="144"
+        height="144"
+        class="hero-entrance nozoom mx-auto mb-6 h-36 w-36 rounded-full bg-white object-contain" />
+    {{ end }}
+
+    <p class="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-primary-600 dark:text-primary-400">
+      {{ i18n "error.404_error" | emojify }}
+    </p>
+    <h1 class="text-balance text-5xl font-black tracking-tighter text-neutral-900 dark:text-white">
+      {{ i18n "error.404_title" | emojify }}
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-xl text-balance text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+      {{ i18n "error.404_description" | emojify }}
+    </p>
+
+    <div class="mt-10">
+      {{ partial "cta-button.html" (dict "url" site.Home.RelPermalink "label" (i18n "error.404_home")) }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,30 @@
+# Solo se listan aquí las claves que cambian respecto a los valores por
+# defecto del tema (themes/blowfish/config/_default/params.toml).
+
+colorScheme = "iotus"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+
+# El logo ya lleva el wordmark "IoTUS" dibujado — sin esto, el header
+# duplica el nombre en texto al lado del logo.
+disableTextInHeader = true
+
+# TODO: recurso pendiente del usuario — imagen 1200x630, logo IoTUS sobre
+# fondo primary-900, sin Cloudia (ver docs/marca/iotus-identidad-corporativa.md).
+defaultSocialImage = "img/social-default.png"
+
+[header]
+  layout = "basic"
+
+[homepage]
+  layout = "custom"
+  showRecent = false
+
+[article]
+  showReadingTime = true
+  showTableOfContents = true
+
+[list]
+  showTableOfContents = false

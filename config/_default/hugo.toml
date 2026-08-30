@@ -10,7 +10,9 @@ enableRobotsTXT = true
 summaryLength = 0
 
 buildDrafts = false
-buildFuture = false
+# Los eventos se anuncian antes de que ocurran (fecha futura) — sin esto
+# Hugo los excluye del build por completo, no solo del listado.
+buildFuture = true
 
 enableEmoji = true
 

@@ -1,0 +1,22 @@
+{{/* Construye el slice de segmentos de la etiqueta de telemetría a partir
+     de una página de /proyectos/ o /eventos/. Devuelve un slice vacío para
+     cualquier otra sección. Uso:
+     {{ $segments := partial "functions/telemetry-segments.html" . }} */}}
+{{- $p := . -}}
+{{- $segments := slice -}}
+{{- if eq $p.Section "proyectos" -}}
+  {{- $segments = $segments | append "Proyecto" -}}
+  {{- with $p.Params.categoria }}{{ $segments = $segments | append . }}{{ end -}}
+  {{- with $p.Params.ubicacion }}{{ $segments = $segments | append . }}{{ end -}}
+  {{- if $p.Params.metrica_valor -}}
+    {{- $segments = $segments | append (printf "%v %s" $p.Params.metrica_valor $p.Params.metrica_unidad) -}}
+  {{- end -}}
+{{- else if eq $p.Section "eventos" -}}
+  {{- $segments = $segments | append "Evento" -}}
+  {{- with $p.Params.tipo }}{{ $segments = $segments | append . }}{{ end -}}
+  {{- with $p.Params.lugar }}{{ $segments = $segments | append . }}{{ end -}}
+  {{- if and $p.Params.plazas (gt (int $p.Params.plazas) 0) -}}
+    {{- $segments = $segments | append (printf "%d plazas" (int $p.Params.plazas)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $segments -}}

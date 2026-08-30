@@ -1,0 +1,62 @@
+{{/* Plantilla de detalle de proyecto: cabecera con etiqueta de telemetría,
+     badge de estado, stack, personas y enlace al repositorio. Basada en la
+     estructura de themes/blowfish/layouts/_default/single.html. */}}
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+  <article>
+    <header id="single_header" class="mt-5 max-w-prose">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+      <div class="mt-1 mb-6 print:hidden">
+        {{ $segments := partial "functions/telemetry-segments.html" . }}
+        {{ partial "telemetry-label.html" $segments }}
+      </div>
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      <div class="min-w-0 min-h-0 max-w-fit">
+
+        {{/* Panel de datos del proyecto */}}
+        <div class="not-prose mb-8 flex flex-wrap items-center gap-3">
+          {{ with .Params.estado }}
+            {{ partial "badge.html" (dict "linkTitle" (title (replace . "-" " ")) "useSecondaryColor" (eq . "idea")) }}
+          {{ end }}
+          {{ with .Params.repositorio }}
+            {{ partial "cta-button.html" (dict "url" . "label" "Ver repositorio" "style" "outline") }}
+          {{ end }}
+        </div>
+
+        {{ with .Params.stack }}
+          <div class="not-prose mb-8">
+            <p class="telemetry-label mb-2">Stack</p>
+            <ul class="flex flex-wrap gap-2 list-none p-0 m-0">
+              {{ range . }}
+                <li>{{ partial "badge.html" . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+
+        <div class="article-content max-w-prose mb-20">
+          {{ .Content }}
+        </div>
+
+        {{ with .Params.personas }}
+          <div class="not-prose mb-10 max-w-prose border-t border-neutral-200 pt-8 dark:border-neutral-800">
+            <p class="telemetry-label mb-3">Quién lo ha hecho</p>
+            <ul class="flex flex-wrap gap-x-6 gap-2 list-none p-0 m-0 text-sm text-neutral-700 dark:text-neutral-300">
+              {{ range . }}
+                <li><span class="font-semibold">{{ .nombre }}</span> — {{ .rol }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <footer class="pt-8 max-w-prose print:hidden">
+      {{ partial "article-pagination.html" . }}
+    </footer>
+  </article>
+{{ end }}

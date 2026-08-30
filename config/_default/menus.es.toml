@@ -1,0 +1,44 @@
+[[main]]
+  name = "Inicio"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "Proyectos"
+  pageRef = "proyectos"
+  weight = 20
+
+[[main]]
+  name = "Eventos"
+  pageRef = "eventos"
+  weight = 30
+
+[[main]]
+  name = "Blog"
+  pageRef = "blog"
+  weight = 40
+
+[[main]]
+  name = "Únete"
+  pageRef = "unete"
+  weight = 50
+
+[[main]]
+  name = "Nosotros"
+  pageRef = "nosotros"
+  weight = 60
+
+[[footer]]
+  name = "Empresas"
+  pageRef = "empresas"
+  weight = 10
+
+[[footer]]
+  name = "Docs"
+  pageRef = "docs"
+  weight = 20
+
+[[footer]]
+  name = "Nosotros"
+  pageRef = "nosotros"
+  weight = 30

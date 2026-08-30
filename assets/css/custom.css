@@ -1,0 +1,137 @@
+/* Tipografía autoalojada — sin conexión a fonts.googleapis.com (IP de
+   visitantes, asociación de universidad pública). Ver docs/marca/. */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-500.woff2") format("woff2");
+}
+
+:root {
+  --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 { letter-spacing: -0.02em; }
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+code, kbd, pre, .telemetry-label {
+  font-family: var(--font-mono);
+}
+
+.prose {
+  max-width: 68ch;
+}
+
+/* Etiqueta de telemetría — el elemento firma del sitio.
+   PROYECTO · LORAWAN · ETSI · 12 NODOS */
+.telemetry-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--color-neutral-600));
+  font-variant-numeric: tabular-nums;
+}
+
+.telemetry-label__sep {
+  color: rgb(var(--color-neutral-400));
+}
+
+/* Retícula del globo — recurso gráfico heredado del logo. Siempre línea,
+   nunca relleno. */
+.globe-grid-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.globe-grid-bg svg {
+  position: absolute;
+  stroke: rgb(var(--color-primary-100));
+  fill: none;
+  stroke-width: 1;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid rgb(var(--color-neutral-200));
+  margin: 0;
+}
+
+@keyframes globe-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.globe-spinner {
+  animation: globe-spin 1.2s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.hero-entrance {
+  animation: hero-rise 200ms ease-out both;
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globe-spinner {
+    animation: none;
+  }
+  .hero-entrance {
+    animation: none;
+  }
+}
