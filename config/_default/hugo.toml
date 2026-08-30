@@ -1,0 +1,51 @@
+theme = "blowfish"
+
+# TODO: dominio sin decidir
+baseURL = "https://iotus.example/"
+
+defaultContentLanguage = "es"
+mainSections = ["proyectos", "blog", "eventos"]
+
+enableRobotsTXT = true
+summaryLength = 0
+
+buildDrafts = false
+buildFuture = false
+
+enableEmoji = true
+
+[pagination]
+  pagerSize = 12
+
+[imaging]
+  anchor = 'Center'
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+  series = "series"
+
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 0
+  toLower = false
+
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "date"
+        weight = 10

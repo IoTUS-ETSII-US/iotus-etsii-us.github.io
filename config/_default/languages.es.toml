@@ -1,0 +1,16 @@
+label = "Español"
+locale = "es-ES"
+weight = 1
+
+title = "IoTUS"
+
+[params]
+  description = "Asociación de IoT · Universidad de Sevilla"
+  dateFormat = "2 January 2006"
+
+  logo = "img/iotus-logo.svg"
+  secondaryLogo = "img/iotus-logo-mono.svg"
+
+  [params.author]
+    name = "IoTUS"
+    image = "img/iotus-logo-mono.svg"
