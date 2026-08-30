@@ -1,6 +1,7 @@
-{{/* Home a medida: hero = último proyecto real, qué hacemos, próximos
-     eventos, proyectos destacados. Activada vía homepage.layout = "custom"
-     (layouts/index.html: partial (print "home/" .Site.Params.homepage.layout ".html") .)
+{{/* Home a medida: hero = último proyecto real, qué hacemos, carrusel con
+     lo más reciente de proyectos/eventos/blog. Activada vía
+     homepage.layout = "custom" (layouts/index.html:
+     partial (print "home/" .Site.Params.homepage.layout ".html") .)
      El contexto "." es la Page de la home. */}}
 
 {{/* El hero es "lo último que hemos construido", así que solo entran
@@ -13,19 +14,15 @@
   {{ $ultimoProyecto = index $proyectosOrdenados 0 }}
 {{ end }}
 
+{{/* Carrusel: lo más reciente entre proyectos, eventos y blog mezclados,
+     al menos 6 entradas (o todas las que haya, si son menos). */}}
 {{ $eventos := where site.RegularPages "Section" "eventos" }}
-{{ $eventosFuturos := slice }}
-{{ range $eventos }}
-  {{ if .Date.After now }}
-    {{ $eventosFuturos = $eventosFuturos | append . }}
-  {{ end }}
-{{ end }}
-{{ $eventosFuturos = first 3 (sort $eventosFuturos "Date" "asc") }}
-
-{{ $destacados := where $proyectos "Params.destacado" true }}
-{{ if $ultimoProyecto }}
-  {{ $destacados = where $destacados "RelPermalink" "ne" $ultimoProyecto.RelPermalink }}
-{{ end }}
+{{ $blog := where site.RegularPages "Section" "blog" }}
+{{ $recientes := $proyectos }}
+{{ $recientes = $recientes | union $eventos }}
+{{ $recientes = $recientes | union $blog }}
+{{ $recientes = sort $recientes "Date" "desc" }}
+{{ $recientes = first 9 $recientes }}
 
 <div class="flex flex-col gap-16 py-8">
 
@@ -68,36 +65,57 @@
 
   <hr class="section-divider">
 
-  {{/* Próximos eventos */}}
-  {{ if gt (len $eventosFuturos) 0 }}
+  {{/* Lo más reciente: carrusel mezclando proyectos, eventos y blog */}}
+  {{ if gt (len $recientes) 0 }}
     <section>
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-extrabold m-0">Próximos eventos</h2>
-        <a class="text-sm font-semibold text-primary-700 hover:underline dark:text-primary-400" href="{{ "eventos" | relURL }}">Ver todos</a>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {{ range $eventosFuturos }}
-          {{ partial "article-link/card.html" . }}
-        {{ end }}
+      <h2 class="text-2xl font-extrabold mb-6">Lo más reciente</h2>
+      <div class="carousel-wrap flex items-center gap-2" data-carousel>
+        <button type="button" class="carousel-nav" data-carousel-prev aria-label="Anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <div
+          class="carousel-track"
+          data-carousel-track
+          tabindex="0"
+          role="region"
+          aria-label="Entradas recientes de proyectos, eventos y blog">
+          {{ range $recientes }}
+            <div data-carousel-item>
+              {{ partial "article-link/card.html" . }}
+            </div>
+          {{ end }}
+        </div>
+        <button type="button" class="carousel-nav" data-carousel-next aria-label="Siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
       </div>
     </section>
 
-    <hr class="section-divider">
-  {{ end }}
-
-  {{/* Proyectos destacados */}}
-  {{ if gt (len $destacados) 0 }}
-    <section>
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-extrabold m-0">Proyectos destacados</h2>
-        <a class="text-sm font-semibold text-primary-700 hover:underline dark:text-primary-400" href="{{ "proyectos" | relURL }}">Ver todos</a>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {{ range $destacados }}
-          {{ partial "article-link/card.html" . }}
-        {{ end }}
-      </div>
-    </section>
+    <script>
+      (function () {
+        document.querySelectorAll("[data-carousel]").forEach(function (root) {
+          var track = root.querySelector("[data-carousel-track]");
+          var prev = root.querySelector("[data-carousel-prev]");
+          var next = root.querySelector("[data-carousel-next]");
+          if (!track || !prev || !next) return;
+          function step(dir) {
+            var item = track.querySelector("[data-carousel-item]");
+            var amount = item ? item.getBoundingClientRect().width + 16 : 300;
+            track.scrollBy({ left: dir * amount, behavior: "smooth" });
+          }
+          prev.addEventListener("click", function () {
+            step(-1);
+          });
+          next.addEventListener("click", function () {
+            step(1);
+          });
+        });
+      })();
+    </script>
   {{ end }}
 
 </div>
