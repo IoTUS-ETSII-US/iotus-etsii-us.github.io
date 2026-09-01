@@ -8,6 +8,8 @@
   pageRef = "proyectos"
   weight = 20
 
+# "Eventos" incluye el calendario del aula (widget de Google Calendar) además
+# del listado de talleres/charlas/hackathons.
 [[main]]
   name = "Eventos"
   pageRef = "eventos"

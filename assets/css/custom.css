@@ -137,9 +137,9 @@ code, kbd, pre, .telemetry-label {
 }
 
 /* Carrusel de entradas recientes (proyectos/eventos/blog) en la home.
-   Sin autoplay a propósito: solo se mueve si el usuario actúa, así no
-   compite con el globo del hero como "momento animado de la página" y no
-   hay que pelear con prefers-reduced-motion más allá del scroll suave. */
+   Avanza solo cada pocos segundos (ver data-carousel-autoplay en
+   home/custom.html); se detiene con el ratón/foco encima o con el botón de
+   pausa, y no arranca si el visitante pide prefers-reduced-motion. */
 .carousel-wrap {
   position: relative;
 }
@@ -170,6 +170,31 @@ code, kbd, pre, .telemetry-label {
 @media (prefers-reduced-motion: reduce) {
   .carousel-track {
     scroll-behavior: auto;
+  }
+}
+
+/* Embed del Google Calendar público (/calendario/). Ancho fluido: el
+   iframe de Google solo acepta alto fijo, así que lo reducimos en móvil
+   para no dejar un cuadro enorme antes del contenido. */
+.calendar-embed {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-neutral-300) / 0.8);
+}
+
+.calendar-embed iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+
+:where(.dark) .calendar-embed {
+  border-color: rgb(var(--color-neutral-600) / 0.8);
+}
+
+@media (min-width: 640px) {
+  .calendar-embed iframe {
+    height: 600px;
   }
 }
 

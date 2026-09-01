@@ -1,7 +1,10 @@
 theme = "blowfish"
 
-# TODO: dominio sin decidir
-baseURL = "https://iotus.example/"
+# URL de GitHub Pages para este repo (IoTUS-ETSII-US/web_nueva). El workflow
+# de deploy (.github/workflows/hugo.yml) la sobreescribe en build con
+# --baseURL usando actions/configure-pages, así que este valor solo se usa
+# en local (hugo server / hugo sin flags).
+baseURL = "https://iotus-etsii-us.github.io/web_nueva/"
 
 defaultContentLanguage = "es"
 mainSections = ["proyectos", "blog", "eventos"]

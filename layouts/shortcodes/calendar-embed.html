@@ -1,0 +1,23 @@
+{{/* Embebe el Google Calendar público de la asociación. El id y la zona
+     horaria salen de site.Params.calendar (config/_default/params.toml) para
+     no tener el correo de la asociación repetido en el markdown. Uso:
+     {{< calendar-embed >}} */}}
+{{ $id := site.Params.calendar.id }}
+{{ $tz := site.Params.calendar.timezone | default "Europe/Madrid" }}
+{{ if $id }}
+  <div class="calendar-embed not-prose">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src={{ $id | urlquery }}&ctz={{ $tz | urlquery }}"
+      style="border: 0"
+      width="100%"
+      height="600"
+      frameborder="0"
+      scrolling="no"
+      loading="lazy"
+      title="Calendario de IoTUS"></iframe>
+  </div>
+{{ else }}
+  <p class="text-neutral-500 dark:text-neutral-400">
+    Falta configurar <code>calendar.id</code> en <code>params.toml</code> para mostrar el calendario.
+  </p>
+{{ end }}

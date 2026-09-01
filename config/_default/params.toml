@@ -15,6 +15,15 @@ disableTextInHeader = true
 # fondo primary-900, sin Cloudia (ver docs/marca/iotus-identidad-corporativa.md).
 defaultSocialImage = "img/social-default.png"
 
+[calendar]
+  id = "iotus.etsii@gmail.com"
+  timezone = "Europe/Madrid"
+  # TODO: API key de Google Calendar (Google Cloud Console → API de Google
+  # Calendar → Credenciales → clave de API, restringida por referrer HTTP al
+  # dominio del sitio). Sin ella, el widget de la home enlaza al calendario
+  # en vez de mostrar el evento actual/próximo.
+  apiKey = ""
+
 [header]
   layout = "basic"
 
