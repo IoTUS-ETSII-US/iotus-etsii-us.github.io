@@ -8,18 +8,16 @@ showReadingTime: false
 
 ## Qué se necesita
 
-Nada solo tener ganas  y nosé bro me encuentro poco inspirado
+Además de muchas ganas de participar, solamente se necesita ser parte de la comunidad universitaria  de la US, es decir estudiante, PDI o PAS, también incluye a las personas procedentes de intercambio.
 
 ## Cómo entrar
-0. Sobornando a Mibu (con tres o cuatro centimos basta).
-1. Ven a un taller o al hackathon — es la forma más rápida de ver cómo trabajamos(regulinchis).
-2. Pásate por el local en horario de apertura (lo publicamos en el calendario de
-   [/eventos/]({{< ref "eventos" >}})).
-3. Rellena la inscripción de socio, es gratis(una pena)
+0. Léete los Estatutos, Normativa de Funcionamiento Interno, y Código de Conducta de la asociación.
+3. Rellena el formulario de inscripcíon
+4. Una vez que determinemos que cumples todos los requisitos, te daremos de alta en el libro de socios de la asociación.
 
-*(Pendiente: enlace al formulario de inscripción de socio y cuota, si la hay.)*
+*(Pendiente: enlace al formulario de inscripción de socio, estatutos y todo ese rollo)*
 
 ## Qué te vas a encontrar
 
-Proyectos en marcha a los que sumarte directamente, gente (con poquísima  paciencia) dispuesta a explicar cómo
-funciona algo por enésima vez (eso cuenta como deporte extremo eh), y un local donde siempre hay una placa a medio soldar y alguien moribundo por intoxicación por humos de soldadura.
+Proyectos en marcha a los que sumarte directamente, gente  dispuesta a explicar cómo
+funciona algo por enésima vez, talleres, un local donde siempre hay una placa a medio soldar (o a medio quemar) y alguien moribundo por intoxicación por humos de soldadura (¿Tendrá relación con la placa a medio soldar anteriormente mencionada? 🤔).

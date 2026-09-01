@@ -10,5 +10,5 @@ cascade:
 ---
 
 {{< lead >}}
-Proyectos reales, con su ficha técnica. Nada de renders.
+Proyectos (tanto internos como externos) realizados por nuestros asociad@s. 
 {{< /lead >}}

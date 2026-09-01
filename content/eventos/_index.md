@@ -12,7 +12,6 @@ cascade:
 {{< calendar-embed >}}
 
 {{< lead >}}
-Lo que hacemos en persona: talleres, charlas y hackathons. Consulta el calendario de
-arriba para ver si el aula está abierta ahora mismo y qué más hay programado; es el
-mismo que usamos para organizarnos por dentro, así que va a misa.
+Lo que hacemos en persona: mini-clases, talleres, charlas y hackathons. Consulta el calendario de
+arriba para ver si el aula está abierta ahora mismo y qué más hay programado
 {{< /lead >}}
