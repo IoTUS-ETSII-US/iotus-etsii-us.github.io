@@ -1,7 +1,7 @@
 ---
 title: "Colmena conectada"
 date: 2026-07-02
-draft: true
+draft: false
 summary: "Peso, temperatura y humedad de tres colmenas experimentales, para saber si están bien sin tener que abrirlas y arriesgarse a que opinen lo contrario."
 
 estado: "en-curso"
@@ -27,7 +27,7 @@ showAuthor: false
 
 Un apicultor sabe si una colmena va bien por el peso: gana peso cuando hay buena cosecha,
 lo pierde en invierno. El problema es pesar una colmena sin abrirla ni molestar a sesenta
-mil animales con aguijón. La solución fue una célula de carga bajo cada colmena y un nodo
+mil animales con aguijón (que te lo clavan con mas gusto que la universídad la  27ª matricula de ADDA  o FFI). La solución fue una célula de carga bajo cada colmena y un nodo
 que reporta cada hora.
 
 **Nota del laboratorio**: la primera versión del firmware confundía "cae la temperatura por
@@ -43,5 +43,6 @@ El sensor no tenía la culpa. El código, sí.
 
 ## Estado
 
-Tres colmenas instrumentadas desde julio, en colaboración con la ETSIA. El cuarto sensor
-está montado en la mesa del local esperando turno.
+Se murío el que teníamos como jefe de proyectos (era alergico a las abejas).
+
+La abeja maya nos llevó a la haya por violación masiva de la privacidad de las abejas, así que yo diriá que lo hicimos muy bien.

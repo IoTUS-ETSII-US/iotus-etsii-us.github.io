@@ -3,17 +3,20 @@ title: "IoTUS"
 description: "Asociación de IoT · Universidad de Sevilla"
 ---
 
-{{< feature-grid columns="4" >}}
+{{< feature-grid columns="5" >}}
 {{< feature icon="microchip" title="Hardware" >}}
-Placas, sensores y protoboards. Si pita o parpadea, probablemente lo hemos soldado nosotros.
+Placas, sensores,protoboards... Soldado con estaño  y lágrimas (y algún dedo quemado)
 {{< /feature >}}
 {{< feature icon="code" title="Software" >}}
-Firmware, backends y paneles de datos. El código también se enseña, no solo el resultado.
+Firmware, backends y paneles de datos.
 {{< /feature >}}
 {{< feature icon="graduation-cap" title="Formación" >}}
-Talleres para empezar desde cero y sesiones para quien ya sabe soldar.
+Talleres para empezar desde cero y sesiones de trabajo en grupo
 {{< /feature >}}
 {{< feature icon="calendar-days" title="Eventos" >}}
-Hackathons, charlas y quedadas de construir cosas en compañía.
+Hackathons, charlas y quedadas
+{{< /feature >}}
+{{< feature icon="calendar-days" title="Préstamos" >}}
+Préstamos de material para asignaturas o proyectos. Duración sujeta a demanda, finalidad y disponibilidad. Si no lo devuelves mandamos a los sicarios 😘.
 {{< /feature >}}
 {{< /feature-grid >}}
