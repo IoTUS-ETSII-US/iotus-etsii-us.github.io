@@ -3,7 +3,7 @@
 
 colorScheme = "iotus"
 defaultAppearance = "light"
-autoSwitchAppearance = true
+autoSwitchAppearance = false
 
 enableSearch = true
 
@@ -26,6 +26,9 @@ defaultSocialImage = "img/social-default.png"
 
 [header]
   layout = "basic"
+
+[footer]
+  showAppearanceSwitcher = false
 
 [homepage]
   layout = "custom"

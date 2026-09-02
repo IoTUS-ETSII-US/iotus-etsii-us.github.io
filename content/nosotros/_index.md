@@ -7,12 +7,7 @@ showReadingTime: false
 ---
 
 **IoTUS** es la asociación de estudiantes de Internet of Things de la Universidad de
-Sevilla. El nombre lo dice todo, espabila , que la vida te va a comé
-
-No hacemos "soluciones de transformación digital" como dicen la gente en linkedin  
-falla y luego funciona, y montamos lo que se nos ocurre en el local. Si algo de esto te
-suena a lo que quieres hacer con tu carrera(aprte de dejarla xDDDDD).
-
+Sevilla. 
 ## Qué hacemos
 
 - **Proyectos** — hardware y software de verdad, la mayoría con algún sensor de por medio (obvio es iotus).
@@ -23,13 +18,17 @@ suena a lo que quieres hacer con tu carrera(aprte de dejarla xDDDDD).
   [/blog/]({{< ref "blog" >}}).
 - **Préstamo de material** — placas, sensores y herramienta. Si no lo devuelves a tiempo
   mandamos a los sicarios ❤️.
+  -
 
 ## Junta
-
-*(Pendiente: nombres, roles y foto de la junta actual — placeholder hasta que la asociación
-confirme la composición para este curso.)*
-Er Gato Spooky 
-Enlazar a todas las juntas directivas persentes y pasadas (futuras no porque la maquina del tiempo esta rota)
+- Presidencia: Jesús Carrascosa Carro.
+- Pesidencia de honor: El Gato Spooky.
+- Vicepresidencia: Alvaro gonzalez Limón.
+- Secretariado: Angelo Sho Moraschi, Miguel Angel Orts Arjona (suplente).
+- Tesorería: Paula Heimberg Gonzalez,Miguel Ferreira Cordero.
+- Vocales: Jose Manuel Corral Trigos, Israel Muñoz Falcón, Manuel Mendez Rastrojo, 
+- Llaveros:  Miguel Toro Llamas, Ibrahim Abughazala Najjar, Alejandro Macias Chavez.
+#TODO enlazar juntas directivas persentes y pasadas (futuras no porque la maquina del tiempo esta rota)
 
 ## Contacto
 
