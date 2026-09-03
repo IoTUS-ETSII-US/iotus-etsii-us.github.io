@@ -28,7 +28,7 @@ defaultSocialImage = "img/social-default.png"
   layout = "basic"
 
 [footer]
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher = true
 
 [homepage]
   layout = "custom"
