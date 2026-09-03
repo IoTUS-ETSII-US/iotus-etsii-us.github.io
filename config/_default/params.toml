@@ -3,7 +3,7 @@
 
 colorScheme = "iotus"
 defaultAppearance = "light"
-autoSwitchAppearance = false
+autoSwitchAppearance = true
 
 enableSearch = true
 
