@@ -62,8 +62,23 @@ code, kbd, pre, .telemetry-label {
   font-family: var(--font-mono);
 }
 
-.prose {
+/* :where() para que esta regla tenga especificidad 0 y no gane por orden de
+   cascada a utilidades de Tailwind como .max-w-full que deban ensanchar un
+   bloque .prose concreto (custom.css se carga después del CSS del tema). */
+:where(.prose) {
   max-width: 68ch;
+}
+
+/* Utilidades de Tailwind usadas en layouts/ propios que el CSS del tema
+   (themes/blowfish/assets/css/compiled/main.css, precompilado y commiteado
+   por el build del tema) no incluye, porque ese build solo escanea las
+   plantillas del propio tema — no las de este repo. Sin esto no hacen nada. */
+.gap-16 {
+  gap: calc(var(--spacing) * 16);
+}
+
+.p-10 {
+  padding: calc(var(--spacing) * 10);
 }
 
 /* Etiqueta de telemetría — el elemento firma del sitio.

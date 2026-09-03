@@ -1,38 +1,34 @@
 ---
-title: "Nosotros"
+title: "¿Quiénes somos?"
 description: "Asociación de IoT · Universidad de Sevilla"
 showDate: false
 showAuthor: false
 showReadingTime: false
 ---
 
-**IoTUS** es la asociación de estudiantes de Internet of Things de la Universidad de
-Sevilla. 
-## Qué hacemos
+**IoTUS** es una asociación de estudiantes de la Universidad de Sevilla que explora el concepto del "Internet of Things".
 
-- **Proyectos** — hardware y software de verdad, la mayoría con algún sensor de por medio (obvio es iotus).
-  Los tienes todos en [/proyectos/]({{< ref "proyectos" >}}).
-- **Eventos** — talleres para empezar desde cero, charlas técnicas y al menos un hackathon
-  al año . Calendario en [/eventos/]({{< ref "eventos" >}}).
-- **Bitácoras** — contamos cómo se construyen los proyectos, incluidos los fallos(casi todo son mas fallos que proyectos pero bueno). En
-  [/blog/]({{< ref "blog" >}}).
-- **Préstamo de material** — placas, sensores y herramienta. Si no lo devuelves a tiempo
-  mandamos a los sicarios ❤️.
-  -
+## ¿Qué hacemos?
 
-## Junta
+- **Proyectos**: nuestro objetivo es trabajar tanto con hardware como con software, para crear cualquier idea que se nos venga a la cabeza. Para ello usamos microcontroladores, sensores, software, y un sin fin más de artilugios. Si te interesa bichear nuestro trabajo, o necesitas ideas para algún proyecto propio, puedes ver lo que tenemos en [/proyectos/]({{< ref "proyectos" >}}).
+- **Eventos**: nuestro objetivo es realizar talleres para todos los públicos, tanto para explorar nuevos conceptos desde cero, como para aquellos que busquen nuevos retos. Aunque también encontrarás charlas técnicas y algún que otro hackatón. Explora nuestro calendario en [/eventos/]({{< ref "eventos" >}}).
+- **Bitácoras**: contamos cómo se construyen los proyectos, incluidos los fallos (casi todo son mas fallos que proyectos pero bueno). En [/blog/]({{< ref "blog" >}}).
+- **Préstamo de material**: algo muy importante en nuestra asociación es el préstamo de placas, sensores y herramientas. Pero eso sí, como no lo devuelvas a tiempo mandamos a los sicarios ❤️.
+
+## Junta Directiva Actual
+
 - Presidencia: Jesús Carrascosa Carro.
-- Pesidencia de honor: El Gato Spooky.
 - Vicepresidencia: Alvaro gonzalez Limón.
 - Secretariado: Angelo Sho Moraschi, Miguel Angel Orts Arjona (suplente).
-- Tesorería: Paula Heimberg Gonzalez,Miguel Ferreira Cordero.
-- Vocales: Jose Manuel Corral Trigos, Israel Muñoz Falcón, Manuel Mendez Rastrojo, 
+- Tesorería: Paula Heimberg Gonzalez, Miguel Ferreira Cordero.
+- Vocales: Jose Manuel Corral Trigos, Israel Muñoz Falcón, Manuel Mendez Rastrojo.
 - Llaveros:  Miguel Toro Llamas, Ibrahim Abughazala Najjar, Alejandro Macias Chavez.
-#TODO enlazar juntas directivas persentes y pasadas (futuras no porque la maquina del tiempo esta rota)
+
+## Miembros Pasados
+
+#TODO enlazar juntas directivas persenteSs y pasadas (futuras no porque la maquina del tiempo esta rota)
 
 ## Contacto
 
-Asociación de IoT · Universidad de Sevilla.
- Mediante telégrafo o señales de humo, nonos va el internet y cierta persona se cargó el teléfono....
-
-*(Pendiente: email de contacto, enlaces a redes sociales y ubicación exacta del local.)*
+#TODO: añadir información de contacto
+(Pendiente: email de contacto, enlaces a redes sociales y ubicación exacta del local.)
